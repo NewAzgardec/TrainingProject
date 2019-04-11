@@ -1,4 +1,4 @@
-package com.example.vkpage;
+package com.example.vkpage.headerView;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.vkpage.R;
 
 public class HeaderView extends LinearLayout {
 
