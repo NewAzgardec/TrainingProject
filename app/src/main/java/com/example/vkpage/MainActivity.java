@@ -133,10 +133,6 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             new ProfileFragment()).commit();
                     break;
-//                case R.id.navigation_news:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new WallFragment()).commit();
-//                    break;
 
                 case R.id.navigation_friends:
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
