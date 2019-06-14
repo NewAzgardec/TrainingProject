@@ -17,7 +17,11 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.vkpage.friends.FriendsFragment;
+import com.example.vkpage.gallery.GalleryFragment;
 import com.example.vkpage.headerView.HeaderView;
+import com.example.vkpage.profile.ProfileFragment;
+import com.example.vkpage.theme.SharedPref;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKScope;

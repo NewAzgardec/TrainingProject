@@ -24,7 +24,6 @@ public class ApplicationInit extends Application {
 
              }}
     };
-
     @Override
     public void onCreate(){
         super.onCreate();

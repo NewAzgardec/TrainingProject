@@ -1,70 +1,9 @@
 package com.example.vkpage.friends;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.vk.sdk.api.VKApi;
-import com.vk.sdk.api.VKError;
-import com.vk.sdk.api.VKParameters;
-import com.vk.sdk.api.VKRequest;
-import com.vk.sdk.api.VKResponse;
-
-import java.util.ArrayList;
-import java.util.List;
-
-class FriendsModel {
-
-    private List<FriendsList> friendList;
-    private List<FriendsObserver> observerList;
-
-    FriendsModel() {
-        friendList = new ArrayList<>();
-        observerList = new ArrayList<>();
-    }
-
-    void setObserver(FriendsObserver observer) {
-        observerList.add(observer);
-    }
-
-    List<FriendsList> getFriendList() {
-        return friendList;
-    }
-
-    void requestFriends() {
-        VKRequest request = VKApi.friends().get(VKParameters.from("fields", "first_name, photo_200", "order", "hints"));
-        request.executeWithListener(new VKRequest.VKRequestListener() {
-            @Override
-            public void onComplete(VKResponse response) {
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                Gson gson = gsonBuilder.create();
-
-                String responseStr = response.responseString;
-                JsonParser parser = new JsonParser();
-                JsonObject jsonObject = parser.parse(responseStr).getAsJsonObject().getAsJsonObject("response");
-                JsonArray items = jsonObject.getAsJsonArray("items");
-
-                for (JsonElement data : items) {
-                    FriendsList friend = gson.fromJson(data, FriendsList.class);
-                    friendList.add(friend);
-                }
-
-                for (int i = 0; i < observerList.size(); i++) {
-                    observerList.get(i).update();
-                }
-            }
-
-            @Override
-            public void attemptFailed(VKRequest request, int attemptNumber, int totalAttempts) {
-                super.attemptFailed(request, attemptNumber, totalAttempts);
-            }
-
-            @Override
-            public void onError(VKError error) {
-                super.onError(error);
-            }
-        });
-    }
+public class FriendsModel {
+    String first_name;
+    String last_name;
+    int online;
+    String photo_200;
+    public int id;
 }

@@ -1,4 +1,5 @@
 package com.example.vkpage.gallery;
 
-public class GalleryModel {
+class GalleryModel {
+    String photo_604;
 }

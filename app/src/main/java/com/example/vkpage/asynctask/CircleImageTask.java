@@ -8,10 +8,10 @@ import java.io.InputStream;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ImageTask extends AsyncTask<String, Void, Bitmap> {
+public class CircleImageTask extends AsyncTask<String, Void, Bitmap> {
     private CircleImageView bitmapImageView;
 
-    public ImageTask(CircleImageView bitmapImageView) {
+    public CircleImageTask(CircleImageView bitmapImageView) {
         this.bitmapImageView = bitmapImageView;
     }
 

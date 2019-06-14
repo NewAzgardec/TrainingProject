@@ -11,7 +11,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.example.vkpage.R;
-import com.example.vkpage.asynctask.ImageTask;
+import com.example.vkpage.asynctask.CircleImageTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,7 @@ public class FriendsAdapter extends BaseAdapter implements Filterable {
         FriendsList friend = (FriendsList) getItem(position);
 
         CircleImageView friendPhoto = view.findViewById(R.id.friendPhoto);
-        new ImageTask(friendPhoto).execute(friend.photo_200);
+        new CircleImageTask(friendPhoto).execute(friend.photo_200);
 
         TextView friendFullName = view.findViewById(R.id.friendFullName);
 
@@ -95,7 +95,6 @@ public class FriendsAdapter extends BaseAdapter implements Filterable {
                     myList.add(filterableString);
                 }
             }
-
             results.values = myList;
             results.count = myList.size();
             return results;
