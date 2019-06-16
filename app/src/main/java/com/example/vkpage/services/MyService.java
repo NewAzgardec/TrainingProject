@@ -1,4 +1,4 @@
-package com.example.vkpage.sevices;
+package com.example.vkpage.services;
 
 import android.app.Service;
 import android.content.Intent;

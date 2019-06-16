@@ -1,5 +1,10 @@
 package com.example.vkpage.friends;
 
+import android.arch.persistence.room.Room;
+
+import com.example.vkpage.MainActivity;
+import com.example.vkpage.room.MyDatabase;
+import com.example.vkpage.room.PersonDao;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -48,6 +53,9 @@ class FriendsList {
 
                 for (JsonElement data : items) {
                     FriendsModel friend = gson.fromJson(data, FriendsModel.class);
+//                    MyDatabase bd = MainActivity.getInstance().getMyDatabase();
+//                    PersonDao personDao=bd.getPersonDao();
+
                     friendList.add(friend);
                 }
 

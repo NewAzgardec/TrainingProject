@@ -20,12 +20,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FriendsAdapter extends BaseAdapter implements Filterable {
 
-    private List<FriendsList> friendList;
+    private List<FriendsModel> friendList;
     private LayoutInflater layoutInflater;
     private List<String> originalData = null;
     private ItemFilter itemFilter = new ItemFilter();
 
-    FriendsAdapter(Context context, List<FriendsList> friendList) {
+    FriendsAdapter(Context context, List<FriendsModel> friendList) {
         this.friendList = friendList;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -55,7 +55,7 @@ public class FriendsAdapter extends BaseAdapter implements Filterable {
             view = layoutInflater.inflate(R.layout.text_friends, parent, false);
         }
 
-        FriendsList friend = (FriendsList) getItem(position);
+        FriendsModel friend = (FriendsModel) getItem(position);
 
         CircleImageView friendPhoto = view.findViewById(R.id.friendPhoto);
         new CircleImageTask(friendPhoto).execute(friend.photo_200);
@@ -67,7 +67,7 @@ public class FriendsAdapter extends BaseAdapter implements Filterable {
         TextView isFriendOnline = view.findViewById(R.id.isFriendOnline);
 
         if (friend.online == 1) {
-            isFriendOnline.setText("online");
+            isFriendOnline.setText(R.string.online_status);
         } else {
             isFriendOnline.setText("");
         }

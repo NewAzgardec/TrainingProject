@@ -4,11 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="?attr/backgroundcolor"
-    tools:context=".ProfileFragment">
+    android:orientation="vertical">
 
-        <include layout="@layout/photo" />
-        <include layout="@layout/activity_number" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/mainPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:textColor="?attr/textcolor"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/onlineStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:textColor="?attr/textcolor"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_gravity="center"
+        android:text="@string/exit"
+        android:layout_marginTop="12dp"
+        android:textColor="?attr/textcolor"
+        android:background="?attr/buttoncolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
+
+    <!--25560-25602--><!--1275-1276--><!--6020-6022-->

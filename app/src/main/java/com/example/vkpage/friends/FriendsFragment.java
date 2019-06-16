@@ -18,9 +18,9 @@ import java.util.List;
 public class FriendsFragment extends Fragment implements FriendsObserver {
 
     private ListView listOfFriends;
-    private List<FriendsList> myList;
+    private List<FriendsModel> myList;
     private EditText editText;
-    private FriendsModel friendsModel;
+    private FriendsList friendsModel;
     private FriendsAdapter friendsAdapter;
 
     @Override
@@ -37,7 +37,7 @@ public class FriendsFragment extends Fragment implements FriendsObserver {
     }
 
     public FriendsFragment() {
-        friendsModel = new FriendsModel();
+        friendsModel = new FriendsList();
         friendsModel.setObserver(this);
         friendsModel.requestFriends();
         myList = friendsModel.getFriendList();

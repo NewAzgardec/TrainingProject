@@ -9,12 +9,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.vkpage.R;
+import com.vk.sdk.api.VKApi;
+import com.vk.sdk.api.VKApiConst;
+import com.vk.sdk.api.VKParameters;
+import com.vk.sdk.api.VKRequest;
+import com.vk.sdk.api.VKResponse;
+import com.vk.sdk.api.model.VKApiUser;
+import com.vk.sdk.api.model.VKList;
 
 public class HeaderView extends LinearLayout {
 
     private ImageView userImage;
     private TextView userName;
-    private TextView userEmail;
 
     public HeaderView(Context context) {
         this(context, null);
@@ -34,8 +40,19 @@ public class HeaderView extends LinearLayout {
         inflate(getContext(), R.layout.header_compound, this);
 
         userImage = findViewById(R.id.android_icon);
-        userName = findViewById(R.id.name_navigation);
-        userEmail = findViewById(R.id.email_navigation);
+
+        final VKRequest request= VKApi.users().get(VKParameters.from(VKApiConst.FIELDS, "first_name, last_name"));
+        request.executeWithListener(new VKRequest.VKRequestListener() {
+            @Override
+            public void onComplete(VKResponse response) {
+                super.onComplete(response);
+                VKList<VKApiUser> userMe = ((VKList<VKApiUser>) response.parsedModel);
+                TextView txt = findViewById(R.id.name_navigation);
+                String fullName = userMe.get(0).first_name + " " + userMe.get(0).last_name;
+                txt.setText(fullName);
+
+            }
+        });
     }
 
     public void updateImage(String colorCode) {

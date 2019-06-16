@@ -7,9 +7,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
+    android:background="?attr/backgroundcolor"
     tools:openDrawer="start">
-
-    <include layout="@layout/profile_layout" />
 
     <LinearLayout
         android:id="@+id/content_frame"
@@ -21,7 +20,7 @@
             android:id="@+id/tool_bar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="?attr/colorPrimary"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/Theme.AppCompat.Light" />
@@ -39,7 +38,9 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
-        app:itemTextColor="@color/colorPrimary"
+        android:background="?attr/backgroundcolor"
+        app:itemTextColor="?attr/textcolor"
+        app:itemIconTint="?attr/iconcolor"
         app:menu="@menu/drawer_menu">
 
     </android.support.design.widget.NavigationView>

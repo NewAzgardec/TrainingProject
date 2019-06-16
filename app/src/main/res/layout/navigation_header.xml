@@ -3,13 +3,13 @@
 xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="192dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="?attr/colorPrimary"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-<com.example.vkpage.HeaderView
+<com.example.vkpage.headerView.HeaderView
     android:id="@+id/header_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />

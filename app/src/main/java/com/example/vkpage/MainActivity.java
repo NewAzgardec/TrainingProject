@@ -1,5 +1,6 @@
 package com.example.vkpage;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -21,6 +22,7 @@ import com.example.vkpage.friends.FriendsFragment;
 import com.example.vkpage.gallery.GalleryFragment;
 import com.example.vkpage.headerView.HeaderView;
 import com.example.vkpage.profile.ProfileFragment;
+import com.example.vkpage.room.MyDatabase;
 import com.example.vkpage.theme.SharedPref;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
@@ -39,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "TAG";
 
     SharedPref sharedPreferences;
+    private MyDatabase myDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        myDatabase=Room.databaseBuilder(this, MyDatabase.class, "database").build();
+
         sharedPreferences = new SharedPref(this);
         if (sharedPreferences.loadNightMode()) {
             setTheme(R.style.DarkTheme);
@@ -134,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (menuItem.getItemId()) {
                 case R.id.navigation_profile:
+
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             new ProfileFragment()).commit();
                     break;
