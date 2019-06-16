@@ -18,12 +18,11 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class FriendsAdapter extends BaseAdapter implements Filterable {
+public class FriendsAdapter extends BaseAdapter {
 
     private List<FriendsModel> friendList;
     private LayoutInflater layoutInflater;
     private List<String> originalData = null;
-    private ItemFilter itemFilter = new ItemFilter();
 
     FriendsAdapter(Context context, List<FriendsModel> friendList) {
         this.friendList = friendList;
@@ -73,38 +72,5 @@ public class FriendsAdapter extends BaseAdapter implements Filterable {
         }
 
         return view;
-    }
-
-    @Override
-    public Filter getFilter() {
-        return itemFilter;
-    }
-
-    private class ItemFilter extends Filter {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            String filterString = constraint.toString().toLowerCase();
-            FilterResults results = new FilterResults();
-            final List<String> list = originalData;
-            int count = list.size();
-            final ArrayList<String> myList = new ArrayList<>(count);
-            String filterableString;
-            for (int i = 0; i < count; i++) {
-                filterableString = list.get(i);
-                if (filterableString.toLowerCase().contains(filterString)) {
-                    myList.add(filterableString);
-                }
-            }
-            results.values = myList;
-            results.count = myList.size();
-            return results;
-        }
-
-        @SuppressWarnings("unchecked")
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<String> filteredData = (ArrayList<String>) results.values;
-            notifyDataSetChanged();
-        }
     }
 }

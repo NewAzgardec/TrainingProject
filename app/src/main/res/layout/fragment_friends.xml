@@ -6,18 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundcolor"
     android:clickable="true"
-    android:focusableInTouchMode="true"
     android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/friends_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:hint="@string/search_friends"
-        android:inputType="textVisiblePassword"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/textcolor" />
 
     <ListView
         android:id="@+id/list_of_friends"

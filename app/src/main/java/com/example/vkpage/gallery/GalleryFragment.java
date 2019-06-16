@@ -8,18 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.example.vkpage.IObserver;
 import com.example.vkpage.R;
 
 import java.util.List;
 
-
-public class GalleryFragment extends Fragment implements GalleryObserver {
+public class GalleryFragment extends Fragment implements IObserver {
 
     private GridView listOfPhotos;
     private List<GalleryModel> galleryList;
     private GalleryList galleryModel;
     private GalleryAdapter galleryAdapter;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class GalleryFragment extends Fragment implements GalleryObserver {
 
         return view;
     }
-
 
     public GalleryFragment() {
         galleryModel = new GalleryList();

@@ -3,10 +3,10 @@ package com.example.vkpage.theme;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SharedPref {
+public class MyThemes {
     SharedPreferences prefs;
 
-    public SharedPref(Context context){
+    public MyThemes(Context context){
         prefs= context.getSharedPreferences("file", Context.MODE_PRIVATE);
     }
 

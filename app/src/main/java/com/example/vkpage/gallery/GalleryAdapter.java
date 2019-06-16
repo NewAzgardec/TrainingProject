@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 
 import com.example.vkpage.R;
 import com.example.vkpage.asynctask.ImageTask;
@@ -50,7 +49,7 @@ public class GalleryAdapter extends BaseAdapter {
 
         GalleryModel photo = (GalleryModel) getItem(position);
 
-        ImageView albumPhoto = view.findViewById(R.id.for_test_gallery);
+        SquarePhoto albumPhoto = view.findViewById(R.id.for_test_gallery);
         new ImageTask(albumPhoto).execute(photo.photo_604);
 
 

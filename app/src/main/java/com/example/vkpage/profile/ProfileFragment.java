@@ -33,7 +33,6 @@ public class ProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         final VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.FIELDS, "first_name, last_name, photo_200, online"));

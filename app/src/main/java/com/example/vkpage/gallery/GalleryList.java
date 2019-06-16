@@ -1,5 +1,6 @@
 package com.example.vkpage.gallery;
 
+import com.example.vkpage.IObserver;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -20,14 +21,14 @@ import java.util.List;
 class GalleryList {
 
     private List<GalleryModel> galleryList;
-    private List<GalleryObserver> observerListGallery;
+    private List<IObserver> observerListGallery;
 
     GalleryList() {
         galleryList = new ArrayList<>();
         observerListGallery = new ArrayList<>();
     }
 
-    void setObserver(GalleryObserver observer) {
+    void setObserver(IObserver observer) {
         observerListGallery.add(observer);
     }
 

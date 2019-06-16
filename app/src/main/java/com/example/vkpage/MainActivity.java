@@ -1,6 +1,5 @@
 package com.example.vkpage;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -22,8 +21,7 @@ import com.example.vkpage.friends.FriendsFragment;
 import com.example.vkpage.gallery.GalleryFragment;
 import com.example.vkpage.headerView.HeaderView;
 import com.example.vkpage.profile.ProfileFragment;
-import com.example.vkpage.room.MyDatabase;
-import com.example.vkpage.theme.SharedPref;
+import com.example.vkpage.theme.MyThemes;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKScope;
@@ -40,14 +38,11 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private String TAG = "TAG";
 
-    SharedPref sharedPreferences;
-    private MyDatabase myDatabase;
+    MyThemes sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        myDatabase=Room.databaseBuilder(this, MyDatabase.class, "database").build();
-
-        sharedPreferences = new SharedPref(this);
+        sharedPreferences = new MyThemes(this);
         if (sharedPreferences.loadNightMode()) {
             setTheme(R.style.DarkTheme);
         } else {

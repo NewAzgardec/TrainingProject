@@ -4,10 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-  <ImageView
+  <com.example.vkpage.gallery.SquarePhoto
       android:id="@+id/for_test_gallery"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="12dp"/>
+      android:layout_height="match_parent"
+
+      android:scaleType="centerCrop"
+      />
 
 </LinearLayout>

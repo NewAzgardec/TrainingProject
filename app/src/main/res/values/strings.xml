@@ -5,10 +5,7 @@
 
     <string name="photos">Фото</string>
     <string name="friends_num">Друзья</string>
-    <string name="number_of_photos">4</string>
-    <string name="number_of_friends">333</string>
     <string name="other">Другое</string>
-    <string name="user_name">Maryia Senkevich</string>
     <string name="online_status">online</string>
     <string name="offline_status">offline</string>
 
@@ -20,12 +17,10 @@
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
 
-    <string name="demo">Hi! It\'s Tea Break!\nI hope you\'ll enjoy using this app! </string>
     <string name="dark_theme">Dark Mode</string>
     <string name="switch_on">on</string>
     <string name="switch_off">off</string>
 
-    <string name="search_friends">Поиск</string>
     <string name="exit">Выйти</string>
 
 </resources>

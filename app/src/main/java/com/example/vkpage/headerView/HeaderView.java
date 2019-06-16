@@ -20,7 +20,6 @@ import com.vk.sdk.api.model.VKList;
 public class HeaderView extends LinearLayout {
 
     private ImageView userImage;
-    private TextView userName;
 
     public HeaderView(Context context) {
         this(context, null);
@@ -38,9 +37,6 @@ public class HeaderView extends LinearLayout {
     private void init() {
         setOrientation(VERTICAL);
         inflate(getContext(), R.layout.header_compound, this);
-
-        userImage = findViewById(R.id.android_icon);
-
         final VKRequest request= VKApi.users().get(VKParameters.from(VKApiConst.FIELDS, "first_name, last_name"));
         request.executeWithListener(new VKRequest.VKRequestListener() {
             @Override
@@ -53,6 +49,7 @@ public class HeaderView extends LinearLayout {
 
             }
         });
+        userImage = findViewById(R.id.android_icon);
     }
 
     public void updateImage(String colorCode) {

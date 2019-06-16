@@ -1,22 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/first_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="?attr/backgroundcolor"
-    android:clickable="true"
-    android:focusableInTouchMode="true"
-    android:orientation="vertical">
-
+    >
 
     <GridView
         android:id="@+id/list_of_photos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="auto_fit"
         android:verticalSpacing="0dp"
         android:horizontalSpacing="0dp"
+        android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:gravity="center"/>
+        />
 </LinearLayout>
